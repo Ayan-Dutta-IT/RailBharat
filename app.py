@@ -1,6 +1,4 @@
 import streamlit as st
-import os
-import shutil
 import speech_recognition as sr
 from complaint_pred import predict_complaint_category
 from sentiment_pred import predict_urgency
@@ -8,7 +6,6 @@ from googletrans import Translator
 
 # Streamlit UI Config
 st.set_page_config(page_title="Railway Complaint Classification 🚆", layout="wide")
-
 
 # Custom CSS for Modern UI
 st.markdown(
