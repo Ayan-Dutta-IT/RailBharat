@@ -2,10 +2,9 @@ streamlit
 pandas
 numpy
 scikit-learn
-SpeechRecognition
+speechrecognition
 googletrans==4.0.0-rc1
 transformers
 torch
 git-lfs
-pydub
-sounddevice
+pocketsphinx
