@@ -1,30 +1,7 @@
 import torch
 import pickle
 import os
-import gdown
-import shutil
 from transformers import BertTokenizer, BertForSequenceClassification
-
-# Google Drive Folder ID
-GOOGLE_DRIVE_FOLDER_ID = "1GI9A7Xhu2bD5DsnuKv7NsAOPas-M78sx"
-
-# Local directory for trained models
-TRAINED_MODEL_DIR = "trained_model"
-
-# Function to download trained model folder
-def download_trained_model():
-    if not os.path.exists(TRAINED_MODEL_DIR):
-        os.makedirs(TRAINED_MODEL_DIR)
-
-        # Download zip file from Google Drive
-        zip_path = "trained_model.zip"
-        gdown.download(f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FOLDER_ID}", zip_path, quiet=False)
-
-        # Extract files
-        shutil.unpack_archive(zip_path, TRAINED_MODEL_DIR)
-        os.remove(zip_path)
-
-download_trained_model()
 
 # Load saved model, tokenizer, and label encoder
 MODEL_PATH = "trained_model"
