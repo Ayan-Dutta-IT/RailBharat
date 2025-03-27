@@ -3,20 +3,20 @@ import pickle
 import os
 from transformers import BertTokenizer, BertForSequenceClassification
 
-# Load saved model, tokenizer, and label encoder
+# Loading saved model, tokenizer, and label encoder
 MODEL_PATH = "trained_model"
 TOKENIZER_PATH = "trained_model"
 LABEL_ENCODER_PATH = "trained_model/label_encoder.pkl"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Load tokenizer and model
+# Tokenizer and model
 tokenizer = BertTokenizer.from_pretrained(TOKENIZER_PATH)
 model = BertForSequenceClassification.from_pretrained(MODEL_PATH)
 model.to(device)
 model.eval()
 
-# Load label encoder
+# Label encoder
 with open(LABEL_ENCODER_PATH, "rb") as f:
     label_encoder = pickle.load(f)
 
