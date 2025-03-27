@@ -11,7 +11,7 @@ st.set_page_config(page_title="Railway Complaint Classification 🚆", layout="w
 st.markdown(
     """
     <style>
-        /* Center the title */
+       
         .title {
             text-align: center;
             font-size: 2.5rem;
@@ -19,7 +19,6 @@ st.markdown(
             color: #0077b6;
         }
 
-        /* Improve input box design */
         .stTextArea textarea {
             border-radius: 10px;
             border: 2px solid #0077b6;
@@ -27,7 +26,6 @@ st.markdown(
             font-size: 16px;
         }
 
-        /* Improve buttons */
         .stButton>button {
             border-radius: 8px;
             background-color: #0077b6;
@@ -41,7 +39,6 @@ st.markdown(
             background-color: #005f87;
         }
 
-        /* Make results more readable */
         .stSuccess {
             background-color: #e8f5e9;
             color: #1b5e20;
@@ -64,14 +61,14 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Title with Icon
+# Title
 st.markdown('<h1 class="title">🚆 Railway Complaint Classifier</h1>', unsafe_allow_html=True)
 
-# Initialize session state
+# Initializing session state
 if "complaint_text" not in st.session_state:
     st.session_state.complaint_text = ""
 
-# Layout for Input Section
+# Layout
 st.markdown("### 📝 Enter Your Complaint Below")
 col1, col2 = st.columns([2, 1])
 
@@ -99,7 +96,7 @@ with col1:
 with col2:
     st.image("https://cdn-icons-png.flaticon.com/512/2731/2731764.png", width=120)
 
-# Predict Button with Modern Styling
+# Predict
 st.markdown("---")
 st.markdown("<h3 style='text-align: center;'>Predictions Below</h3>", unsafe_allow_html=True)
 if st.button("Predict Now"):
@@ -125,7 +122,7 @@ if st.button("Predict Now"):
     else:
         st.error("⚠️ Please provide a complaint before predicting.")
 
-# Footer with Contact Info
+# Footer
 st.markdown("---")
 st.markdown(
     "<h4 style='text-align: center; color: grey;'>🔹 Developed by The Optimizers | 🚆 RailBharat 🔹</h4>",
