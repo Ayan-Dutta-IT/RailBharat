@@ -1,11 +1,37 @@
 import streamlit as st
+import os
+import gdown
+import shutil
 import speech_recognition as sr
 from complaint_pred import predict_complaint_category
 from sentiment_pred import predict_urgency
 from googletrans import Translator
 
+
+# Google Drive Folder ID
+GOOGLE_DRIVE_FOLDER_ID = "1GI9A7Xhu2bD5DsnuKv7NsAOPas-M78sx"
+
+# Local directory for trained models
+TRAINED_MODEL_DIR = "trained_model"
+
+# Function to download trained model folder
+def download_trained_model():
+    if not os.path.exists(TRAINED_MODEL_DIR):
+        os.makedirs(TRAINED_MODEL_DIR)
+
+        # Download zip file from Google Drive
+        zip_path = "trained_model.zip"
+        gdown.download(f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FOLDER_ID}", zip_path, quiet=False)
+
+        # Extract files
+        shutil.unpack_archive(zip_path, TRAINED_MODEL_DIR)
+        os.remove(zip_path)
+
+
 # Streamlit UI Config
 st.set_page_config(page_title="Railway Complaint Classification 🚆", layout="wide")
+
+download_trained_model()
 
 # Custom CSS for Modern UI
 st.markdown(
