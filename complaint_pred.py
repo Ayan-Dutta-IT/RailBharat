@@ -2,9 +2,21 @@ import torch
 import pickle
 import os
 from transformers import BertTokenizer, BertForSequenceClassification
+import time
+
+MODEL_PATH = "trained_model"
+
+# Wait for the folder to be ready (max 10 sec)
+timeout = 10
+while not os.path.exists(MODEL_PATH) and timeout > 0:
+    print(f"Waiting for {MODEL_PATH} to be available...")
+    time.sleep(1)
+    timeout -= 1
+
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError(f"{MODEL_PATH} not found. Ensure app.py downloads and extracts it correctly.")
 
 # Loading saved model, tokenizer, and label encoder
-MODEL_PATH = "trained_model"
 TOKENIZER_PATH = "trained_model"
 LABEL_ENCODER_PATH = "trained_model/label_encoder.pkl"
 
