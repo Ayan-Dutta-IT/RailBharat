@@ -1,3 +1,26 @@
+import gdown
+import zipfile
+import os
+
+# Google Drive File ID
+file_id = "1GI9A7Xhu2bD5DsnuKv7NsAOPas-M78sx"
+zip_path = "trained_model.zip"
+extract_folder = "trained_model"
+
+# Download ZIP if not already present
+if not os.path.exists(zip_path):
+    print("Downloading trained model...")
+    gdown.download(f"https://drive.google.com/uc?id={file_id}", zip_path, quiet=False)
+
+# Extract ZIP if not already extracted
+if not os.path.exists(extract_folder):
+    print("Extracting trained model...")
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_folder)
+
+
+
+
 import streamlit as st
 import speech_recognition as sr
 from complaint_pred import predict_complaint_category
