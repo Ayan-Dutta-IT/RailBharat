@@ -3,7 +3,7 @@ import zipfile
 import os
 
 # Google Drive File ID
-file_id = "1GI9A7Xhu2bD5DsnuKv7NsAOPas-M78sx"
+file_id = "1ytKYci8P4dlIzXE0xQm-IriXGL-pwMLs"
 zip_path = "trained_model.zip"
 extract_folder = "trained_model"
 
