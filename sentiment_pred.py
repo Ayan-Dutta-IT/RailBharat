@@ -1,7 +1,7 @@
 from transformers import pipeline
 
 # Loading classification for urgency detection
-zero_shot_pipeline = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+zero_shot_pipeline = pipeline("zero-shot-classification", model="cross-encoder/nli-deberta-v3-base")
 
 # Urgency levels
 URGENCY_LABELS = [
