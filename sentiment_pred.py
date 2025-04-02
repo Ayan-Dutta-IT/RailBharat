@@ -3,7 +3,7 @@ import os
 os.environ["TRANSFORMERS_CACHE"] = "./hf_cache"
 
 # Loading classification for urgency detection
-zero_shot_pipeline = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+zero_shot_pipeline = pipeline("zero-shot-classification", model="MoritzLaurer/deberta-v3-small-nli")
 
 # Urgency levels
 URGENCY_LABELS = [
