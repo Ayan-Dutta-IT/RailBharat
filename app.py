@@ -148,6 +148,6 @@ if st.button("Predict Now"):
 # Footer
 st.markdown("---")
 st.markdown(
-    "<h4 style='text-align: center; color: grey;'>🔹 Developed by The Optimizers | 🚆 RailBharat 🔹</h4>",
+    "<h4 style='text-align: center; color: grey;'>🔹 Developed by Ayan | 🚆 RailBharat 🔹</h4>",
     unsafe_allow_html=True,
 )
